@@ -3,13 +3,12 @@
     background-color: #fe424d;
     color: #fff;
     border-radius: 25px;
-    padding: 0 1rem 0 1rem;
   }
   .search-btn:hover {
     background-color: #fe424d;
     color: #fff;
   }
-  .search-btn i{
+  .search-btn i {
     display: inline;
     margin-right: 0.5rem;
   }
@@ -17,11 +16,46 @@
     border-radius: 25px;
     padding: 0.5rem 3rem 0.5rem 3rem;
   }
+  /* Mobile overlay menu */
+  @media (max-width: 768px) {
+    .navbar .collapse.navbar-collapse {
+      position: absolute;
+      top: 100%; /* right below navbar */
+      left: 0;
+      width: 100%;
+      background: #fff; /* give it background so text is visible */
+      z-index: 1050; /* sits above page content */
+      padding: 1rem;
+      border-top: 1px solid #ddd;
+    }
+
+    /* Make links stack neatly */
+    .navbar .navbar-nav {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .navbar .navbar-nav .nav-link {
+      padding: 0.5rem 0;
+      width: 100%;
+    }
+
+    /* Adjust search box inside menu */
+    .navbar .search-inp {
+      width: 100%;
+      margin-bottom: 0.5rem;
+    }
+    .navbar .search-btn {
+      width: 100%;
+    }
+  }
 </style>
 
 <nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
+    <a class="navbar-brand" href="/listings"
+      ><i class="fa-regular fa-compass"></i
+    ></a>
     <button
       class="navbar-toggler"
       type="button"
@@ -40,9 +74,18 @@
       </div>
 
       <div class="navbar-nav ms-auto flex-column flex-md-row">
-        <form class="d-flex flex-column flex-md-row align-items-center" role="search">
-          <input class="form-control me-md-2 search-inp" type="search" placeholder="Search destinations" >
-          <button class=" btn search-btn mt-2 mt-md-0" type="submit"><i class="fa-solid fa-magnifying-glass"></i>Search</button>
+        <form
+          class="d-flex flex-column flex-md-row align-items-center"
+          role="search"
+        >
+          <input
+            class="form-control me-md-2 search-inp"
+            type="search"
+            placeholder="Search destinations"
+          />
+          <button class="btn search-btn mt-2 mt-md-0" type="submit">
+            <i class="fa-solid fa-magnifying-glass"></i>Search
+          </button>
         </form>
       </div>
       <div class="navbar-nav ms-auto flex-column flex-md-row">
